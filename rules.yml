@@ -1,0 +1,10 @@
+groups:
+  - name: generic
+    rules:
+      - alert: High LA
+        expr: node_load1 > 5 
+        for: 15s
+        labels:
+          severity: warn
+        annotations:
+          summary: "Load Average > 5"

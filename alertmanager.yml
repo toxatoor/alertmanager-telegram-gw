@@ -1,0 +1,5 @@
+receivers:
+  - name: 'general'
+    webhook_configs:
+      - url: 'http://127.0.0.1:8888/user/12345678/' # user1
+      - url: 'http://127.0.0.1:8888/user/87654321/' # user2 

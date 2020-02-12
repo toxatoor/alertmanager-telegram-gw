@@ -1,0 +1,16 @@
+[Unit]
+Description=Alertmanager-Telegram Gateway
+After=syslog.target
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/opt/telegram-gw
+Environment=BOT_ID="telegram bot token"
+ExecStart=/opt/telegram-gw/bin/python /opt/telegram-gw/telegram-gw.py
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
