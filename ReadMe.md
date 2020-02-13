@@ -39,7 +39,7 @@ Currently it uses just a few of available fields in alertmanager's json (due to 
 - labels.hostname as referred host. 
 - annotations.summary as a alert message body. 
 
-Message template is static, hardcoded. One can use [Markdown](https://core.telegram.org/bots/api#markdown-style) in summary. 
+Message template is static, hardcoded. 
 
 ## Performance 
 
@@ -59,6 +59,7 @@ Not really great - around 400 msg/sec on a single-core VM.
 
 ## TODO
 
+- Add markdown support.
 - Customizable message templates. 
 - Dynamic variables (labels, etc). 
 - Customizable values mapping. 

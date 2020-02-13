@@ -4,7 +4,8 @@ from tornado.escape import json_encode, json_decode
 import tornado.web
 from os import environ, getenv
 
-template = "{} -> {}: {}"
+template = """{} -> {}:
+{}"""
 
 bot_id  = environ["BOT_ID"]
 url     = "https://api.telegram.org/bot{}/sendMessage".format(bot_id)
@@ -14,7 +15,7 @@ bind_port = getenv("BIND_PORT") or 8888
 
 body = {
    "chat_id":    "", 
-   "parse_mode": "markdown",
+   "parse_mode": "",
    "text":       ""
 }
 
