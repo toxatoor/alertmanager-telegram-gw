@@ -53,7 +53,8 @@ class MainHandler(tornado.web.RequestHandler):
         
         for alert in data["alerts"]:
            try:
-               body["text"] = template.format(alert["labels"]["hostname"], statusmap[alert["status"]], alert["annotations"]["summary"])
+               hostname = alert["labels"]["hostname"] or "unspecified"
+               body["text"] = template.format(hostname, statusmap[alert["status"]], alert["annotations"]["summary"])
                request = HTTPRequest(url, headers=headers, method="POST", body=json_encode(body))
                r = client.fetch(request)
            except Exception as e:
